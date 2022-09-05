@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:  #000;
+}
+a:link, a:visited { text-decoration: none;}
+
+ul>li{ list-style: none;}
+
+/* public------------------------------------------------------------ */
+body{
+    font-size: 20px;
+    width: 1903px;  
+}
+.wrap{ 
+   width: 1903px;
+   margin: 0 auto;
+   min-height: 900px;
+}
+hr{
+    border: 1px solid #000;
+    margin: 10px 0 50px;
+}
+/* header------------------------------------------------------------ */
+#header{
+    width: 80%;
+    min-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+#header > div:nth-child(1){
+    width: 15%;
+	margin : auto 0px;
+}
+#main_nav_logo{
+    width: 200px;
+    margin: 0 20px 0 0;
+}
+#header > div:nth-child(2){
+    width: 50%;
+    margin-top: 33px;
+}
+#header > div:nth-child(2) > ul{ 
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    font-size: 27px;
+    font-weight: bold;
+    position: relative;
+}
+#header ul > li > a:hover{
+    color: #664E9E;
+}
+#main_nav > ul > li{
+    width: 30%;
+    text-align: center;
+}
+#main_nav > ul > li > ul{
+    display: none;
+    width: 30%;
+    position: absolute;
+    font-size: 20px;
+    background-color: #fff;
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+#main_nav > ul > li > ul > li:not(:first-child){
+    padding: 15px 0;
+}
+#main_nav > ul > li > ul > li:last-child{
+    margin-bottom: 20px;
+}
+#main_nav > ul > li > ul > li:not(:first-child):hover{
+    background-color: #664E9E;
+}
+#main_nav > ul > li > ul > li:not(:first-child):hover > a{
+    color: #fff;
+}
+#main_nav > ul > li > ul hr {
+    margin-bottom: 20px;
+    border: 2px solid #664E9E;
+}
+#main_nav > ul > li:hover > ul{
+    display: block;
+}
+#header > div:nth-child(3){
+    width: 19%;
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+}
+#mypage_btn, #logout_btn{
+    height: 40px;
+    color: #664E9E;
+    background-color: #fff;
+    border: 1px solid #664E9E;
+    padding: 3px 30px 7px;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+#mypage_btn:hover, #logout_btn:hover{
+    color: #fff;
+    background-color: #664E9E;
+}
+
+/* footer------------------------------------------------------------ */
+#footer{
+    width: 100%;
+    height: 300px;
+    background-color: #2e2347;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto 0;
+}
+#footer > div{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 0 0 0;
+}
+#category{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+#category li{
+    margin-bottom: 5px;
+}
+#category p, #category a{
+    color: #ccc;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+#category p{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.ver_line{
+    width: 2px;
+    height: 88%;
+    background-color: #ccc;
+    margin: 0 70px;
+}
+#info{
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+}
+#info > div, #info p{
+    color: #ccc;
+}
+#info > div:nth-child(1){
+    text-align: center;
+    margin: 0 0 35px;
+}
+#info p{
+    text-align: end;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* 메인 페이지 */
+
+/* -section----------------------------------------------------------- */
+#section{
+    width: 100%;
+    height: auto;
+}
+#section1{
+    width: 100%;
+    height: 700px;
+    margin-bottom: 100px;
+    position: relative;
+}
+#section1 > div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#section1 > div > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section2, #section3, #section4{
+    width: 80%;
+    height: 300px;
+    margin: 0 auto 100px;
+    text-align: center;
+    padding-top: 130px;
+    border: 1px solid #ccc;
+}
+
+
+/* 마이 페이지 */
+
+/* -myPage----------------------------------------------------------- */
+#myPage{
+    width: 80%;
+    margin: 0 auto;
+}
+#myPage_top{
+    margin-top: 60px;
+    font-size: 25px;
+}
+#myPage_top span{
+    font-size: 40px;
+    font-weight: bold;
+}
+#myPage_middle{
+    width: 90%;
+    height: 200px;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: space-between;
+}
+#mp_m_left{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+#mp_m_left img{
+    height: 100%;
+}
+#mp_m_middle{
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+}
+#mp_m_right{
+    width: 75%;
+    height: 100%;
+}
+#mp_m_right li{
+    width: 100%;
+    height: 30%;
+}
+#mp_m_right li > div{
+    width: 100%;
+    display: flex;
+    margin: 10px 0 10px;
+}
+#mp_m_right li > div p{
+    font-size: 25px;
+}
+#mp_m_right li > div p:nth-child(1){
+    width: 20%;
+    margin-right: 20px;
+    font-weight: bold;
+}
+#myPage_bottom{
+    width: 100%;
+    text-align: end;
+}
+#update_btn, #withdrawal_btn, #cancle_btn{
+    height: 40px;
+    color: #664E9E;
+    background-color: #fff;
+    border: 1px solid #664E9E;
+    padding: 7px 30px 7px;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+#update_btn:hover, #withdrawal_btn:hover, #cancle_btn:hover{
+    color: #fff;
+    background-color: #664E9E;
+}
+
+/* -update form----------------------------------------------------------- */
+#update_form_ul li{
+    height: 20%;
+}
+#update_form_ul input{
+    font-size: 20px;
+    padding-right: 5px;
+}

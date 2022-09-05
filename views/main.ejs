@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Lifelog</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="public/img/favicon.png">
+    <!-- css 파일 연결 -->
+    <link rel="stylesheet" type="text/css" href="public/css/common.css">
+    <!-- jquery 연결 -->
+    <script src="node_modules/jquery/dist/jquery.js" ></script> 
+</head>
+<body>
+    <div id="header">
+        <%- include("./common/header") %>
+    </div>
+    <div class="wrap">
+        <div id="section">
+            <div id="section1">
+                <div><img src="public/img/hero1.jpg" alt="메인 이미지"></div>
+                <div><img src="public/img/hero2.jpg" alt="메인 이미지"></div>
+                <div><img src="public/img/hero3.jpg" alt="메인 이미지"></div>
+            </div>
+            <div id="section2">
+                <h3>내용1</h3>
+            </div>
+            <div id="section3">
+                <h3>내용2</h3>
+            </div>
+            <div id="section4">
+                <h3>내용3</h3>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <%- include("./common/footer") %>
+    </div>
+    <script>
+        $('#section1 > div:gt(0)').hide();
+        setInterval(function(){
+            $('#section1 > div:first').fadeOut(2000).next().fadeIn(2000).end().appendTo('#section1');
+        }, 4000);
+    </script>
+</body>
+</html>

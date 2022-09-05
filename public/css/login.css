@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:  #000;
+}
+a:link, a:visited { text-decoration: none;}
+
+ul>li{ list-style: none;}
+/* ------------------------------------------------------------ */
+body{
+    font-size: 20px;
+    width: 1903px;
+    height: 964px;
+}
+.wrap{
+   display: flex;  
+   width: 100%;
+   height: 100%;
+}
+.login_main_img{  
+    width: 75%; 
+    height: 100%;  
+}
+.login_main_img > img{ 
+    width: 100%; 
+    height: 100%;
+}
+.login{  
+    width: 25%; 
+    height: 100%;
+    text-align: center;
+}
+.login_box{
+    padding-top: 200px;
+    width: 100%;
+}
+#login_logo_img{
+    width: 100%;
+    margin: 0 auto;
+}
+#login_input input {
+    font-size: 20px;
+    width: 240px;
+    height: 35px;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 5px;
+}
+#input_id, #input_pw{
+    width: 44%;
+    margin-left: 117px;
+}
+#input_id{
+    display: flex;
+    justify-content: space-between;
+}
+#email_x{
+    margin-left: 10px;
+    margin-top: 9px;
+    display: none;
+    color: #664E9E;
+}
+#login_btns{
+    margin-top: 40px;
+}
+#login_btn{
+    color: #fff;
+    background-color: #664E9E;
+    padding: 8px 97px;
+    border-radius: 8px;
+}
+
