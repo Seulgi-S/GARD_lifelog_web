@@ -19,15 +19,16 @@ function emptyCheck(){
 //참고 https://blckchainetc.tistory.com/231    https://imthekingofcoding.tistory.com/30
 function emailCheck(email){
     let emailPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    //                 숫자, 알파벳, -, _ 가능         @필수   숫자, 알파벳, -, _ 가능   .필수   알파벳 2~3글자  
-    if(!emailPattern.test(email.val())){
+    //                 숫자, 알파벳, -, _ 가능         @필수   숫자, 알파벳, -, _ 가능   .필수   알파벳 2~3글자 
+    if(!emailPattern.test(email)){
         $('#email_x').css('display', 'inline-block');
-        if(email.val()==''){
+        if(email==''){
             $('#email_x').css('display', 'none');
         }
     }else{
         $('#email_x').css('display', 'none');
         email_check_result = true;
+        return email_check_result
     }    
 }
 
@@ -66,5 +67,45 @@ function go_login(){
         }else{
             $('#email').focus();
         }               
+    }
+}
+// 회원가입 이동
+
+function go_join() {
+    document.getElementById("login_box_id").innerHTML =
+        "<div id='login_logo_img'><img src='public/img/logo.png' alt='로고'></div>" +
+        "<div id='login_input'>" + "<div id = 'input_name'><input type='text' placeholder='이름' name='name' id='name'></div>" +
+        "<div id='input_id'><input type='text' placeholder='이메일' name='email' id='email' class='chk' title='이메일' autofocus onkeyup='emailCheck($(this))'><i id='email_x' class='fa-solid fa-circle-xmark fa-flip'style='--fa-animation-duration: 3s;'></i><br></div><div id='input_pw'><input type='text' placeholder='비밀번호' name='pw' id='pw' onkeypress='if(event.keyCode == 13) save_join()' class='chk' title='비밀번호'></div></div>" +
+        "<div id='login_btns'><a id='login_btn' onclick='go_back()'>이전</a> <a id='join_btn' onclick='save_join()'>회원가입</a></div>"
+}
+function go_back() {
+    document.getElementById("login_box_id").innerHTML =
+        "<div id='login_logo_img'><img src='public/img/logo.png' alt='로고'></div>" +
+        "<div id='login_input'><div id='input_id'><input type='text' placeholder='이메일' name='email' id='email' class='chk' title='이메일' autofocus onkeyup='emailCheck($(this))'><i id='email_x' class='fa-solid fa-circle-xmark fa-flip'style='--fa-animation-duration: 3s;'></i><br></div><div id='input_pw'><input type='password' placeholder='비밀번호' name='pw' id='pw' onkeypress='if(event.keyCode == 13) go_login()' class='chk' title='비밀번호'></div></div>" +
+        "<div id='login_btns'><a id='login_btn' onclick='go_login()'>로그인</a> <a id='join_btn' onclick='go_join()'>회원가입</a></div>"
+}
+function save_join() {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var pw = $('#pw').val();
+    if (emptyCheck()) {
+        if (emailCheck(email)) {
+            $.ajax({
+                url: '/join_ajax',
+                type: 'POST',
+                data: {
+                    'name': name,
+                    'email': email,
+                    'pw': pw
+                }
+            }).done(function (result) {//회원가입 성공
+                alert('회원가입 성공');
+            }).fail(function (xhr, status, errorThrown) {//회원가입 실패
+                alert("회원가입 실패");
+            })
+        } else {
+            alert("이메일형식을 확인해주세요")
+            $('#email').focus();
+        }
     }
 }
