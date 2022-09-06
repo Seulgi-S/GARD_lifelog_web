@@ -17,7 +17,7 @@ app.use(session({
     resave : false,  //재저장 반복 옵션
     saveUninitialized : false,  //초기화되지 않은 상태로 미리 저장할 수 있는 옵션
     //store : 세션 데이터의 저장소 설정 옵션
-    cookie :{maxAge: 1000*60} //세션 만료 시간 == 현재 1시간 => 1분으로 해도 작동 잘 된다
+    cookie :{maxAge: 1000*60*60} //세션 만료 시간 == 현재 1시간 => 1분으로 해도 작동 잘 된다
 }))
     //라우터를 사용하여 특정 경로로 들어올 경우 함수 실행
 // var router = express.Router();
