@@ -1,6 +1,6 @@
 module.exports = {
-    host : 'localhost',
+    host : '220.67.213.212',
     user : 'root',
-    password : 'lifelog0712',
+    password : 'gard',
     databasse : 'lifelog'
 }

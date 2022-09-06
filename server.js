@@ -17,7 +17,7 @@ app.use(session({
     resave : false,  //재저장 반복 옵션
     saveUninitialized : false,  //초기화되지 않은 상태로 미리 저장할 수 있는 옵션
     //store : 세션 데이터의 저장소 설정 옵션
-    cookie :{maxAge: 1000*60} //세션 만료 시간 == 현재 1시간 => 1분으로 해도 작동 잘 된다
+    cookie :{maxAge: 1000*60*60} //세션 만료 시간 == 현재 1시간 => 1분으로 해도 작동 잘 된다
 }))
     //라우터를 사용하여 특정 경로로 들어올 경우 함수 실행
 // var router = express.Router();
@@ -213,5 +213,30 @@ app.get('/withdrawal', function(req, res){
                 else res.redirect('/login');
             })
         }
+    })
+})
+
+//회원가입 요청을 했을 때
+app.post('/join_ajax', function(req, res){
+    var email = req.body.email;
+    var pw = req.body.pw;
+    var name = req.body.name;
+    //DB에서 ID, PW 일치여부 조회하기
+    var sql1 = 'SELECT * FROM member_info WHERE email = ?'
+    var sql2 = 'INSERT INTO member_info(email, pw, name) values(?,?,?) '
+    conn.query(sql1, email, function(err, result){
+        if(err) console.log(err);
+        else {
+            if(result[0]) console.log("이미 존재하는 이메일입니다.");
+            else{
+                conn.query(sql2, [email, pw, name], function(err, result){
+                    if(err) console.log(err)
+                    if(result) {
+                        console.log("회원가입 완료") 
+                        res.redirect("/login")
+                    };
+            })
+            }
+        }    
     })
 })
