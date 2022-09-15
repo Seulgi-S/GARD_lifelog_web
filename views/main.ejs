@@ -167,61 +167,8 @@
     <div id="footer">
         <%- include("./common/footer") %>
     </div>
-    <script>
-        //section1 사진 넘어가는 기능
-        $('#section1 > div:gt(0)').hide();
-        setInterval(function(){
-            $('#section1 > div:first').fadeOut(3000).next().fadeIn(3000).end().appendTo('#section1');
-        }, 4000);
-
-        //section2 css 제어용
-        function sec2_css_control(){
-            var ani_time = 600;
-            $('#s2_text1').animate({ opacity : '1' }, ani_time, function(){
-                    $('#s2_text2').animate({ opacity : '1' }, ani_time, function(){
-                        $('#s2_text3').animate({ opacity : '1' }, ani_time, function(){
-                            $('#s2_text4').animate({ opacity : '1' }, ani_time, function(){
-                                $('#s2_text5').animate({ opacity : '1' }, ani_time, function(){
-                                    $('#s2_text6').animate({ opacity : '1' }, ani_time);
-                                });
-                            });
-                        });
-                    });
-                }); 
-        }
-
-        //section2~5 영역 스크롤 감지용
-        function scroll_location(cl, state){
-            var sec2 = $('#section2').eq(0).offset().top;
-            if (state === 'up'){
-                sec2 = $('#section2').offset().top + $('#section2').outerHeight();
-            }
-            var distanse = 0
-            if (state === 'down'){ //스크롤 내릴 때
-                distanse = sec2 - cl
-                if(distanse < 200 && distanse > -200){
-                    sec2_css_control()
-                }
-            }else{  //스크롤 올릴 때
-                distanse = cl - sec2
-                if(distanse < -500 && distanse > -($('#section2').height())){
-                    sec2_css_control()
-                }
-            }
-            console.log(state + ' / ' + '현재 위치 : ' + cl + ' / ' + '영역 높이값 : ' + sec2)
-        }
-        
-        //스크롤 움직일 때마다 위, 아래 방향 + 현재 위치값 알아내는 용도
-        $('body').on('mousewheel', function(e){
-            var wheel = e.originalEvent.wheelDelta;
-            var cur_location = $(document).scrollTop();
-            var up_down = 'down'
-            if(wheel > 0) up_down = 'up'
-            scroll_location(cur_location, up_down)
-        })
-
-    </script>
     <!-- js 파일 연결 -->
     <script src="public/js/common.js"></script>
+    <script src="public/js/main.js"></script>
 </body>
 </html>
