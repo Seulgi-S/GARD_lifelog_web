@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Lifelog</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="public/img/favicon.png">
+    <!-- css 파일 연결 -->
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
+    <!-- js 파일 연결 -->
+    <script src="public/js/login.js"></script>
+    <!-- jquery 연결 => npm install --save jquery 로도 설치 가능함-->
+    <!-- <script src="js/jquery-3.6.0.min.js>" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>  -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <!-- Font Awesome 연결 -->
+    <script src="https://kit.fontawesome.com/6ba366ebd2.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 왼쪽 -->
+        <div class="login_main_img">
+            <img src="public/img/login_main.jpg" alt="로그인 메인 이미지">
+        </div>
+        <!-- 오른쪽 -->
+        <div class="login row">
+            <div class="login_box" id="login_box_id">
+                <!-- 로고 -->
+                <div id="login_logo_img">
+                    <img src="public/img/logo.png" alt="로고">
+                </div>
+                <!-- 입력창 -->
+                <div id="login_input">
+                    <div id="input_id">
+                        <input type="text" placeholder="이메일" name="email" id="email" class="chk" title="이메일" autofocus
+                            onkeyup="emailCheck($(this).val())">
+                        <i id="email_x" class="fa-solid fa-circle-xmark fa-flip"
+                            style="--fa-animation-duration: 3s;"></i><br>
+                    </div>
+                    <div id="input_pw">
+                        <input type="password" placeholder="비밀번호" name="pw" id="pw"
+                            onkeypress="if(event.keyCode == 13) go_login()" class="chk" title="비밀번호">
+                    </div>
+                </div>
+                <!-- 버튼 -->
+                <div id="login_btns">
+                    <a id="login_btn" onclick="go_login()">로그인</a>
+                    <a id="join_btn" onclick="go_join()">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

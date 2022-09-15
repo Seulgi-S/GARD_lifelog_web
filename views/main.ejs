@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Lifelog</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="public/img/favicon.png">
+    <!-- css 파일 연결 -->
+    <link rel="stylesheet" type="text/css" href="public/css/common.css">
+    <!-- jquery 연결 -->
+    <script src="node_modules/jquery/dist/jquery.js" ></script> 
+</head>
+<body>
+    <div id="header">
+        <%- include("./common/header") %>
+    </div>
+    <div class="wrap">
+        <div id="section">
+            <div id="section1">
+                <div><img src="public/img/main1.jpg" alt="메인 이미지"></div>
+                <div><img src="public/img/main2.jpg" alt="메인 이미지"></div>
+                <div><img src="public/img/main3.jpg" alt="메인 이미지"></div>
+            </div>
+            <div id="section2">
+                <div class="section_top">
+                    <p>우리나라 치매 환자 현황</p>
+                    <hr><br>
+                    <p>2021년 기준 65세 이상 노인 인구 중 10.3%가 치매 환자이며, 그 중 알츠하이머 환자가 가장 큰 비중을 차지하고 있습니다.</p>
+                    <hr>
+                    <p>알츠하이머 치매에 대한 완전한 치료 방법은 아직 개발되지 않았지만, 약물 치료 등을 통해 진행을 지연시킬 수 있어 조기 발견과 예방이 매우 중요합니다. </p>
+                    <hr>
+                </div> 
+                <div id="section2_content">
+                    <div class="s2_text_l" id="s2_text1">
+                        <p>4.5%</p>
+                        <div>
+                            <hr>
+                            <div class="s2_circle"></div>
+                        </div> 
+                        <p>65~69세</p>
+                    </div>
+                    <div class="s2_text_l" id="s2_text2">
+                        <p>30.3%</p>
+                        <div>
+                            <hr>
+                            <div class="s2_circle"></div>
+                        </div> 
+                        <p>70~79세</p>
+                    </div>
+                    <div class="s2_text_l" id="s2_text3">
+                        <p>65.1%</p>
+                        <div>
+                            <hr>
+                            <div class="s2_circle"></div>
+                        </div> 
+                        <p>80세 이상</p>
+                    </div>
+                    <div class="s2_text_r" id="s2_text4">
+                        <p>8.6%</p>
+                        <div>
+                            <div class="s2_circle"></div>
+                            <hr>     
+                        </div> 
+                        <p>혈관성 치매</p>
+                        <p>(VD : Vascular Dementia)</p>
+                    </div>
+                    <div class="s2_text_r" id="s2_text5">
+                        <p>15.4%</p>
+                        <div>
+                            <div class="s2_circle"></div>
+                            <hr>     
+                        </div> 
+                        <p>기타</p>
+                        <p>(루게릭/파킨스병 치매, 알콜성 치매 등)</p>
+                    </div>
+                    <div class="s2_text_r" id="s2_text6">
+                        <p>76%</p>
+                        <div>
+                            <div class="s2_circle"></div>
+                            <hr>     
+                        </div> 
+                        <p>알츠하이머 치매</p>
+                        <p>(AD : Alzheimer's Dementia)</p>
+                    </div>
+                    <div class="s2_text_r" id="s2_text7">
+                        <p>중앙치매센터, 2021년 65세 이상 노인 인구에 대한 전국 치매환자 유병 현황 자료</p>
+                    </div>
+                </div>
+            </div>
+            <div id="section3">
+                <div class="section_top">
+                    <p>치매 고위험군 라이프로그 AI 데이터란?</p>
+                    <hr><br>
+                    <p>치매 예방과 조기 발견에 도움을 주기 위해 라이프로그 데이터와 SNSB(치매 진단 검사), PET 진단 등을 활용하여 유용한 정보를 제공하는 데이터셋입니다.</p>
+                    <hr>
+                </div>
+                <div id="section3_content">
+                    <div id="s3_l_top">
+                        <ul>
+                            <li><img src="public/img/sec3_1.png" alt="라이프로그"></li>
+                            <li><img src="public/img/sec3_2.png" alt="SNSB"></li>
+                            <li><img src="public/img/sec3_3.png" alt="임상 진단"></li>
+                            <li><img src="public/img/sec3_4.png" alt="PET 진단"></li>
+                        </ul>
+                    </div>
+                    <div id="s3_l_bot">
+                        <img src="public/img/sec3_5.png" alt="치매일 확률">
+                    </div>
+                </div>
+            </div>
+            <div id="section4">
+                <div class="section_top">
+                    <p>라이프로그 데이터란?</p>
+                    <hr><br>
+                </div>
+                <div id="section4_content">
+                    <div id="s4_r_top">
+                        <ul>
+                            <li><img src="public/img/sec4_1.png" alt="심박수"></li>
+                            <li><img src="public/img/sec4_2.png" alt="활동량"></li>
+                            <li><img src="public/img/sec4_3.png" alt="수면 시간"></li>
+                            <li><img src="public/img/sec4_4.png" alt="체온"></li>
+                        </ul>
+                    </div>
+                    <div id="s4_r_mid">
+                        <p>OURA ring 심박수 모니터링 화면</p>
+                        <hr>
+                    </div>
+                    <div id="s4_r_bot">
+                        <ul>
+                            <li><img src="public/img/sec4_5.png" alt="심박수 그래프"></li>
+                            <li>
+                                <p><span>66</span> bpm</p>
+                                <p>평균 심박수</p>
+                                <p><span>60</span> bpm</p>
+                                <p>최저 심박수</p>
+                            </li>
+                        </ul>
+                        <p>웨어러블 디바이스를 장착하고 있는 동안 기록된</p>
+                        <p>활동량, 평균 심박수, 수면 시간 등을 의미합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="section5">
+                <div class="section_top">
+                    <p>SNSB란?</p>
+                    <hr><br>
+                    <p>서울신경심리검사로 뇌의 인지 기능과 관련된 5가지 영역들에 대해 평가합니다.  </p>
+                    <hr>
+                    <p>시간 경과에 따른 인지 기능 변화 추이를 확인하는데 유용하며, 치매 중증도를 확인하고 치매 원인을 추정할 수 있는 검사입니다.</p>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <div id="section5_content">
+                    <div id="sec5_inner_content">
+                        <img src="public/img/sec5_1.png" alt="주의집중력" class="sec5_imgs" id="sec5_imgs_1">
+                        <img src="public/img/sec5_2.png" alt="언어 기능" class="sec5_imgs" id="sec5_imgs_2">
+                        <img src="public/img/sec5_3.png" alt="시공간 기능" class="sec5_imgs" id="sec5_imgs_3">
+                        <img src="public/img/sec5_4.png" alt="기억력" class="sec5_imgs" id="sec5_imgs_4">
+                        <img src="public/img/sec5_5.png" alt="전두엽 집행 능력" class="sec5_imgs" id="sec5_imgs_5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <%- include("./common/footer") %>
+    </div>
+    <!-- js 파일 연결 -->
+    <script src="public/js/common.js"></script>
+    <script src="public/js/main.js"></script>
+</body>
+</html>
