@@ -240,3 +240,7 @@ app.post('/join_ajax', function(req, res){
         }    
     })
 })
+
+app.get("/law", function(req, res){
+    res.render("law");
+})

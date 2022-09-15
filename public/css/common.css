@@ -631,3 +631,12 @@ hr{
     font-size: 20px;
     padding-right: 5px;
 }
+.card-group{
+    height: 300px;
+
+}
+.card{
+    border-radius: 75%;
+}
+.card-header{
+}
